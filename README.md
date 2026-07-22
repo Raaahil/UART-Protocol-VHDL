@@ -2,11 +2,9 @@
 
 # UART Communication Protocol using VHDL
 
-### FPGA-Based UART Design & Functional Verification using AMD Vivado 2023.2
+### FPGA-Based UART Communication System | RTL Design | Functional Simulation | AMD Vivado 2023.2
 
-A complete implementation of the UART (Universal Asynchronous Receiver Transmitter) communication protocol in VHDL featuring a Baud Rate Generator, UART Transmitter, UART Receiver, RTL Design, Functional Simulation and FPGA-oriented architecture.
-
----
+A complete implementation of the Universal Asynchronous Receiver Transmitter (UART) protocol developed in VHDL, featuring a Baud Rate Generator, UART Transmitter, UART Receiver and Top-Level Integration. The design has been verified through behavioral simulation and synthesized for the Artix-7 FPGA.
 
 ![Language](https://img.shields.io/badge/Language-VHDL-blue?style=for-the-badge)
 
@@ -14,7 +12,7 @@ A complete implementation of the UART (Universal Asynchronous Receiver Transmitt
 
 ![FPGA](https://img.shields.io/badge/FPGA-Artix--7-success?style=for-the-badge)
 
-![Simulation](https://img.shields.io/badge/Simulation-Passed-brightgreen?style=for-the-badge)
+![Simulation](https://img.shields.io/badge/Simulation-PASSED-brightgreen?style=for-the-badge)
 
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
@@ -24,49 +22,43 @@ A complete implementation of the UART (Universal Asynchronous Receiver Transmitt
 
 # Project Overview
 
-UART (Universal Asynchronous Receiver Transmitter) is one of the most widely used asynchronous serial communication protocols in embedded systems.
+UART (Universal Asynchronous Receiver Transmitter) is one of the most commonly used asynchronous serial communication protocols in embedded systems.
 
-This project implements a complete UART communication system in **VHDL**, including:
+This project presents a complete RTL implementation of UART communication using VHDL. It includes a modular design consisting of a Baud Rate Generator, UART Transmitter, UART Receiver, Top-Level Module and Behavioral Testbench.
 
-- Baud Rate Generator
-- UART Transmitter
-- UART Receiver
-- Top-Level Integration
-- Behavioral Testbench
-
-The complete design has been developed and verified using **AMD Vivado 2023.2** for the **Artix-7 FPGA** platform.
+The design has been developed and verified using **AMD Vivado 2023.2** targeting the **Artix-7 FPGA** platform.
 
 ---
 
-# Key Features
+# Project Highlights
 
 - Complete UART Protocol Implementation
-- Modular VHDL Design
+- Modular RTL Design
 - Baud Rate Generator
-- UART Transmitter
-- UART Receiver
+- UART Transmitter (TX)
+- UART Receiver (RX)
 - Top-Level Integration
 - Functional Simulation
-- RTL Analysis
-- FPGA-Oriented Design
+- RTL Verification
+- FPGA Synthesis Ready
 
 ---
 
 # Development Environment
 
 | Parameter | Details |
-|------------|----------------|
+|-----------|---------|
 | Language | VHDL |
-| IDE | AMD Vivado 2023.2 |
+| Design Tool | AMD Vivado 2023.2 |
 | FPGA Family | Artix-7 |
 | Device | XC7A35T |
-| Design Methodology | RTL Design |
+| Design Methodology | RTL |
 
 ---
 
 # Repository Structure
 
-```
+```text
 UART-Protocol-VHDL
 │
 ├── baud_generator.vhd
@@ -87,54 +79,100 @@ UART-Protocol-VHDL
 
 ---
 
-# System Block Diagram
+# System Architecture
 
-<img src="UART_PROJECT_BLOCK_DIAGRAM.jpg" width="900">
+The complete UART communication system consists of:
+
+- Baud Rate Generator
+- UART Transmitter
+- UART Receiver
+- Serial Communication Line
+
+<img src="UART_PROJECT_BLOCK_DIAGRAM.jpg" width="100%">
 
 ---
 
 # RTL Schematic
 
-<img src="UART_RTL_Schematic.png" width="900">
+RTL view generated using AMD Vivado.
+
+<img src="UART_RTL_Schematic.png" width="100%">
 
 ---
 
-# Functional Verification
+# Functional Simulation
 
-The complete UART communication was verified using Behavioral Simulation.
+The UART communication was verified using Behavioral Simulation.
 
-| Test | Result |
-|------|---------|
+### Test Case
+
+| Parameter | Value |
+|----------|-------|
 | Input Data | 0xAA |
 | Received Data | 0xAA |
-| Transmission | PASS |
-| Reception | PASS |
+| Result | PASS |
 
-<img src="Simulation_Waveform.png" width="900">
+<img src="Simulation_Waveform.png" width="100%">
 
 ---
 
 # Project Hierarchy
 
-<img src="UART_Project_Hierarchy.png" width="900">
+Hierarchical view of the complete UART project.
+
+<img src="UART_Project_Hierarchy.png" width="100%">
 
 ---
 
 # Implemented Design
 
-<img src="UART_Implemented_Design.png" width="900">
+Synthesized implementation generated in Vivado.
+
+<img src="UART_Implemented_Design.png" width="100%">
 
 ---
 
-# Working Principle
+# Working Flow
 
-1. The Baud Generator generates the baud tick.
-2. UART Transmitter converts parallel data into serial format.
-3. Serial data is transmitted over the TX line.
-4. UART Receiver detects the Start Bit.
-5. Incoming serial bits are sampled.
-6. Received data is reconstructed into parallel format.
-7. The `rx_done` signal indicates successful reception.
+```
+Parallel Data
+      │
+      ▼
+UART Transmitter
+      │
+      ▼
+Serial TX Line
+      │
+      ▼
+UART Receiver
+      │
+      ▼
+Parallel Data Output
+```
+
+---
+
+# Design Modules
+
+| Module | Description |
+|--------|-------------|
+| Baud Generator | Generates baud tick |
+| UART TX | Converts parallel data into serial format |
+| UART RX | Converts serial data into parallel format |
+| UART Top | Integrates all modules |
+| Testbench | Performs functional verification |
+
+---
+
+# Simulation Results
+
+| Verification | Status |
+|-------------|--------|
+| Baud Generator | PASS |
+| UART Transmitter | PASS |
+| UART Receiver | PASS |
+| Functional Simulation | PASS |
+| RTL Verification | PASS |
 
 ---
 
@@ -142,42 +180,43 @@ The complete UART communication was verified using Behavioral Simulation.
 
 - FPGA-Based Embedded Systems
 - Digital Communication
-- Serial Communication Interfaces
-- Industrial Automation
+- Serial Communication
+- Embedded Hardware Design
 - IoT Devices
-- Microcontroller Communication
-- Communication Protocol Design
-- Embedded Hardware Development
+- Industrial Automation
+- Communication Protocol Learning
+- FPGA Academic Projects
 
 ---
 
-# Future Enhancements
+# Future Improvements
 
 - Configurable Baud Rate
 - Parity Bit Support
-- Variable Stop Bits
+- Multiple Stop Bits
 - FIFO Buffer
 - Interrupt Support
-- Hardware Validation on FPGA Board
+- FPGA Board Validation
 
 ---
 
-# Simulation Status
+# Project Metrics
 
-| Module | Status |
-|---------|--------|
-| Baud Generator | Completed |
-| UART Transmitter | Completed |
-| UART Receiver | Completed |
-| Top Module | Completed |
-| Functional Simulation | Passed |
-| RTL Verification | Passed |
+| Parameter | Value |
+|-----------|-------|
+| HDL Language | VHDL |
+| RTL Modules | 5 |
+| FPGA Family | Artix-7 |
+| Design Tool | AMD Vivado 2023.2 |
+| Functional Simulation | Completed |
+| RTL Verification | Completed |
+| Project Status | Completed |
 
 ---
 
 # Author
 
-## Mohammad Rahil Khan
+## Rahil Nadim Khan
 
 Electronics and Computer Engineering
 
@@ -185,4 +224,4 @@ Electronics and Computer Engineering
 
 # License
 
-Licensed under the MIT License.
+This project is licensed under the MIT License.
